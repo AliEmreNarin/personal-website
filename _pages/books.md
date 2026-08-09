@@ -31,9 +31,7 @@ nav_order: 4
     cursor: pointer;
     transition: all 0.15s;
   }
-  .filter-btn:hover {
-    border-color: var(--global-theme-color, #212529);
-  }
+  .filter-btn:hover { border-color: var(--global-theme-color, #212529); }
   .filter-btn.active {
     background: var(--global-theme-color, #212529);
     border-color: var(--global-theme-color, #212529);
@@ -55,14 +53,8 @@ nav_order: 4
     gap: 1.5rem 1.25rem;
     margin-bottom: 1rem;
   }
-  .book-card {
-    display: flex;
-    flex-direction: column;
-    transition: opacity 0.2s;
-  }
-  .book-card.hidden {
-    display: none;
-  }
+  .book-card { display: flex; flex-direction: column; }
+  .book-card.hidden { display: none; }
   .book-card a {
     text-decoration: none;
     color: inherit;
@@ -103,15 +95,12 @@ nav_order: 4
     border-radius: 3px;
     color: #fff;
   }
-  .badge-finished   { background: rgba(30,120,60,0.85); }
-  .badge-reading    { background: rgba(30,80,180,0.85); }
-  .badge-queued     { background: rgba(100,100,100,0.75); }
-  .badge-paused     { background: rgba(180,100,20,0.82); }
-  .badge-abandoned  { background: rgba(160,30,30,0.8); }
-  .book-info {
-    margin-top: 0.6rem;
-    flex: 1;
-  }
+  .badge-finished  { background: rgba(30,120,60,0.85); }
+  .badge-reading   { background: rgba(30,80,180,0.85); }
+  .badge-queued    { background: rgba(100,100,100,0.75); }
+  .badge-paused    { background: rgba(180,100,20,0.82); }
+  .badge-abandoned { background: rgba(160,30,30,0.8); }
+  .book-info { margin-top: 0.6rem; flex: 1; }
   .book-title {
     font-size: 0.82rem;
     font-weight: 600;
@@ -124,16 +113,48 @@ nav_order: 4
     color: var(--global-text-color-light, #6c757d);
     margin-bottom: 0.25rem;
   }
-  .book-stars {
-    font-size: 0.7rem;
-    color: #e8a020;
-    letter-spacing: 0.05em;
-  }
+  .book-stars { font-size: 0.7rem; color: #e8a020; letter-spacing: 0.05em; }
   .book-stars .empty { color: var(--global-divider-color, #dee2e6); }
+
+  /* Previous years — compact row */
+  .prev-years-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 3rem 0 0;
+    cursor: pointer;
+    user-select: none;
+    color: var(--global-text-color-light, #6c757d);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: left;
+    border-top: 1px solid var(--global-divider-color, #dee2e6);
+  }
+  .prev-years-toggle .arrow { transition: transform 0.2s; display: inline-block; }
+  .prev-years-toggle.open .arrow { transform: rotate(90deg); }
+  #prev-years-content { display: none; }
+  #prev-years-content.open { display: block; }
+
+  .prev-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1rem 0.9rem;
+    margin-bottom: 1rem;
+  }
+  .prev-grid .book-cover-wrap { border-radius: 3px; }
+  .prev-grid .book-title { font-size: 0.75rem; }
+  .prev-grid .book-author { font-size: 0.68rem; }
+  .prev-grid .book-stars { font-size: 0.65rem; }
 </style>
 
 <div class="library-intro">
-  <p>Books I've read, am reading, or plan to read — roughly in reverse order. Click any cover to read my notes.</p>
+  <p>Books I've read, am reading, or plan to read. Synced daily from <a href="https://www.goodreads.com/user/show/165621971-ali-narin" target="_blank">Goodreads</a>.</p>
 </div>
 
 <div class="library-filters">
@@ -141,61 +162,99 @@ nav_order: 4
   <button class="filter-btn" data-filter="finished">Finished</button>
   <button class="filter-btn" data-filter="reading">Reading</button>
   <button class="filter-btn" data-filter="queued">Want to Read</button>
-  <button class="filter-btn" data-filter="paused">Paused</button>
+  <button class="filter-btn" data-filter="abandoned">Abandoned</button>
 </div>
 
+{% assign recent_years = "2026,2025,2024" | split: "," %}
+{% assign prev_years   = "2023" | split: "," %}
+
 {% assign all_books = site.books | sort: "started" | reverse %}
-{% assign displayed_years = "" %}
 
-{% for book in all_books %}
-  {% assign yr = book.started | date: '%Y' %}
-  {% unless displayed_years contains yr %}
-    {% if displayed_years != "" %}
-      </div><!-- /library-grid -->
-    {% endif %}
-    <h2 class="library-year">{{ yr }}</h2>
-    <div class="library-grid">
-    {% assign displayed_years = displayed_years | append: yr | append: "," %}
-  {% endunless %}
-
-  {% assign status_lower = book.status | downcase | strip | default: "uncategorized" %}
-  <div class="book-card" data-status="{{ status_lower }}">
-    <a href="{{ book.url | relative_url }}">
-      <div class="book-cover-wrap">
-        {% if book.cover %}
-          <img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
-        {% elsif book.olid %}
-          <img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-        {% elsif book.isbn %}
-          <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-        {% elsif book.cover_goodreads %}
-          <img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
-        {% endif %}
-        {% if book.status %}
-          <span class="book-status-badge badge-{{ status_lower }}">{{ book.status }}</span>
-        {% endif %}
-      </div>
-      <div class="book-info">
-        <div class="book-title">{{ book.title }}</div>
-        <div class="book-author">{{ book.author }}</div>
-        {% if book.stars %}
-          <div class="book-stars">
-            {% assign full  = book.stars | floor %}
-            {% assign empty = 5 | minus: full %}
-            {% for i in (1..full)  %}★{% endfor %}{% for i in (1..empty) %}<span class="empty">★</span>{% endfor %}
-          </div>
-        {% endif %}
-      </div>
-    </a>
-  </div>
+{% for yr in recent_years %}
+  {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
+  {% if yr_books.size > 0 %}
+<h2 class="library-year">{{ yr }}</h2>
+<div class="library-grid" data-year="{{ yr }}">
+  {% for book in yr_books %}
+    {% assign status_lower = book.status | downcase | strip | default: "finished" %}
+    <div class="book-card" data-status="{{ status_lower }}">
+      <a href="{{ book.url | relative_url }}">
+        <div class="book-cover-wrap">
+          {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
+          {% endif %}
+          {% if book.status %}<span class="book-status-badge badge-{{ status_lower }}">{{ book.status }}</span>{% endif %}
+        </div>
+        <div class="book-info">
+          <div class="book-title">{{ book.title }}</div>
+          <div class="book-author">{{ book.author }}</div>
+          {% if book.stars and book.stars != 0 %}
+            <div class="book-stars">
+              {% assign full = book.stars | floor %}{% assign empty = 5 | minus: full %}
+              {% for i in (1..full) %}★{% endfor %}{% for i in (1..empty) %}<span class="empty">★</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+  {% endif %}
 {% endfor %}
 
-{% if all_books.size > 0 %}
-  </div><!-- /library-grid -->
+<!-- Previous years collapsible -->
+{% assign has_prev = false %}
+{% for yr in prev_years %}
+  {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
+  {% if yr_books.size > 0 %}{% assign has_prev = true %}{% endif %}
+{% endfor %}
+
+{% if has_prev %}
+<button class="prev-years-toggle" id="prev-toggle">
+  <span class="arrow">▶</span> Previous years
+</button>
+<div id="prev-years-content">
+  {% for yr in prev_years %}
+    {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
+    {% if yr_books.size > 0 %}
+<h2 class="library-year">{{ yr }}</h2>
+<div class="prev-grid" data-year="{{ yr }}">
+  {% for book in yr_books %}
+    {% assign status_lower = book.status | downcase | strip | default: "finished" %}
+    <div class="book-card" data-status="{{ status_lower }}">
+      <a href="{{ book.url | relative_url }}">
+        <div class="book-cover-wrap">
+          {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+          {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
+          {% endif %}
+          {% if book.status %}<span class="book-status-badge badge-{{ status_lower }}">{{ book.status }}</span>{% endif %}
+        </div>
+        <div class="book-info">
+          <div class="book-title">{{ book.title }}</div>
+          <div class="book-author">{{ book.author }}</div>
+          {% if book.stars and book.stars != 0 %}
+            <div class="book-stars">
+              {% assign full = book.stars | floor %}{% assign empty = 5 | minus: full %}
+              {% for i in (1..full) %}★{% endfor %}{% for i in (1..empty) %}<span class="empty">★</span>{% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+    {% endif %}
+  {% endfor %}
+</div>
 {% endif %}
 
 <script>
   (function () {
+    // Filter buttons
     var btns  = document.querySelectorAll('.filter-btn');
     var cards = document.querySelectorAll('.book-card');
     btns.forEach(function (btn) {
@@ -204,13 +263,19 @@ nav_order: 4
         btn.classList.add('active');
         var f = btn.dataset.filter;
         cards.forEach(function (card) {
-          if (f === 'all' || card.dataset.status === f) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
+          card.classList.toggle('hidden', f !== 'all' && card.dataset.status !== f);
         });
       });
     });
+
+    // Previous years toggle
+    var toggle  = document.getElementById('prev-toggle');
+    var content = document.getElementById('prev-years-content');
+    if (toggle && content) {
+      toggle.addEventListener('click', function () {
+        toggle.classList.toggle('open');
+        content.classList.toggle('open');
+      });
+    }
   })();
 </script>
