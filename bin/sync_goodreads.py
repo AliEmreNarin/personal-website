@@ -18,7 +18,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 GOODREADS_USER_ID = "165621971"
-SHELVES = ["books-2023", "books-2024", "books-2025", "books-2026"]
+SHELVES = ["currently-reading", "to-read", "books-2023", "books-2024", "books-2025", "books-2026"]
 BOOKS_DIR = os.path.join(os.path.dirname(__file__), "..", "_books")
 
 
@@ -47,6 +47,8 @@ def determine_status(user_shelves_str, read_at):
         return "Reading"
     if "not-finishing" in shelves:
         return "Abandoned"
+    if "to-read" in shelves:
+        return "Queued"
     if read_at:
         return "Finished"
     return "Finished"
