@@ -171,8 +171,9 @@ nav_order: 4
 {% assign all_books = site.books | sort: "started" | reverse %}
 
 {% for yr in recent_years %}
-  {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
-  {% if yr_books.size > 0 %}
+{% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
+{% if yr_books.size > 0 %}
+
 <h2 class="library-year">{{ yr }}</h2>
 <div class="library-grid" data-year="{{ yr }}">
   {% for book in yr_books %}
@@ -190,10 +191,10 @@ nav_order: 4
         <div class="book-info">
           <div class="book-title">{{ book.title }}</div>
           <div class="book-author">{{ book.author }}</div>
-          {% if book.stars and book.stars != 0 %}
+          {% if book.stars %}
+            {% assign s = book.stars %}
             <div class="book-stars">
-              {% assign full = book.stars | floor %}{% assign empty = 5 | minus: full %}
-              {% for i in (1..full) %}★{% endfor %}{% for i in (1..empty) %}<span class="empty">★</span>{% endfor %}
+              {% if s >= 1 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 2 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 3 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 4 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 5 %}★{% else %}<span class="empty">★</span>{% endif %}
             </div>
           {% endif %}
         </div>
@@ -205,16 +206,18 @@ nav_order: 4
 {% endfor %}
 
 <!-- Previous years collapsible -->
+
 {% assign has_prev = false %}
 {% for yr in prev_years %}
-  {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
-  {% if yr_books.size > 0 %}{% assign has_prev = true %}{% endif %}
+{% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
+{% if yr_books.size > 0 %}{% assign has_prev = true %}{% endif %}
 {% endfor %}
 
 {% if has_prev %}
 <button class="prev-years-toggle" id="prev-toggle">
-  <span class="arrow">▶</span> Previous years
+<span class="arrow">▶</span> Previous years
 </button>
+
 <div id="prev-years-content">
   {% for yr in prev_years %}
     {% assign yr_books = all_books | where_exp: "b", "b.started contains yr" %}
@@ -236,10 +239,10 @@ nav_order: 4
         <div class="book-info">
           <div class="book-title">{{ book.title }}</div>
           <div class="book-author">{{ book.author }}</div>
-          {% if book.stars and book.stars != 0 %}
+          {% if book.stars %}
+            {% assign s = book.stars %}
             <div class="book-stars">
-              {% assign full = book.stars | floor %}{% assign empty = 5 | minus: full %}
-              {% for i in (1..full) %}★{% endfor %}{% for i in (1..empty) %}<span class="empty">★</span>{% endfor %}
+              {% if s >= 1 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 2 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 3 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 4 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 5 %}★{% else %}<span class="empty">★</span>{% endif %}
             </div>
           {% endif %}
         </div>

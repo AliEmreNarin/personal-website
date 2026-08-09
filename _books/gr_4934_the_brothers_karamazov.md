@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'The Brothers Karamazov'
-author: 'Fyodor Dostoevsky'
+title: "The Brothers Karamazov"
+author: "Fyodor Dostoevsky"
 isbn: 0374528373
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1427728126l/4934.jpg
 released: 1879

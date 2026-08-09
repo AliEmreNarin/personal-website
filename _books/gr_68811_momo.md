@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Momo'
-author: 'Michael Ende'
+title: "Momo"
+author: "Michael Ende"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420905611l/68811.jpg
 released: 1973
 date: 2025-12-22

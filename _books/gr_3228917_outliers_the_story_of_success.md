@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Outliers: The Story of Success'
-author: 'Malcolm Gladwell'
+title: "Outliers: The Story of Success"
+author: "Malcolm Gladwell"
 isbn: 0316017922
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1344266315l/3228917.jpg
 released: 2008

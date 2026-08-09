@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Nexus: A Brief History of Information Networks from the Stone Age to AI'
-author: 'Yuval Noah Harari'
+title: "Nexus: A Brief History of Information Networks from the Stone Age to AI"
+author: "Yuval Noah Harari"
 isbn: 059373422X
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1709986452l/204927599._SY475_.jpg
 released: 2024

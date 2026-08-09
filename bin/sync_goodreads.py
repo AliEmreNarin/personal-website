@@ -81,6 +81,12 @@ def year_from_shelves(user_shelves_str, shelf_fetched_from):
     return ""
 
 
+def yaml_str(s):
+    """Return s as a YAML double-quoted scalar (handles quotes, colons, backslashes)."""
+    escaped = s.replace("\\", "\\\\").replace('"', '\\"')
+    return f'"{escaped}"'
+
+
 def book_to_markdown(book):
     title = book["title"]
     author = book["author"]
@@ -100,8 +106,8 @@ def book_to_markdown(book):
 
     lines = ["---"]
     lines.append("layout: book-review")
-    lines.append(f"title: {repr(title)}")
-    lines.append(f"author: {repr(author)}")
+    lines.append(f"title: {yaml_str(title)}")
+    lines.append(f"author: {yaml_str(author)}")
     if isbn:
         lines.append(f"isbn: {isbn}")
     if cover_url:

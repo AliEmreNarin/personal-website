@@ -94,6 +94,7 @@ nav_order: 5
 <h2 class="now-section-title">Reading</h2>
 
 {% if reading_books.size > 0 %}
+
 <div class="now-grid">
   {% for book in reading_books %}
   <div class="book-card">
@@ -121,6 +122,7 @@ nav_order: 5
 <h2 class="now-section-title">Want to Read</h2>
 
 {% if queued_books.size > 0 %}
+
 <div class="now-grid">
   {% for book in queued_books %}
   <div class="book-card">

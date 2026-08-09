@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Utopia'
-author: 'Thomas More'
+title: "Utopia"
+author: "Thomas More"
 isbn: 0140449108
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388190168l/18414.jpg
 released: 1516

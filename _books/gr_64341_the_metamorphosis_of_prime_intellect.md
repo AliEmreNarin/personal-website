@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'The Metamorphosis of Prime Intellect'
-author: 'Roger    Williams'
+title: "The Metamorphosis of Prime Intellect"
+author: "Roger    Williams"
 isbn: 1411602196
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347689279l/64341.jpg
 released: 2006

@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Yüzyıllık Yalnızlık'
-author: 'Gabriel García Márquez'
+title: "Yüzyıllık Yalnızlık"
+author: "Gabriel García Márquez"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1346534080l/15980654.jpg
 released: 1967
 date: 2025-03-01

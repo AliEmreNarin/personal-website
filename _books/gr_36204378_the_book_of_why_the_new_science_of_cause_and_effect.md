@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'The Book of Why: The New Science of Cause and Effect'
-author: 'Judea Pearl'
+title: "The Book of Why: The New Science of Cause and Effect"
+author: "Judea Pearl"
 isbn: 046509760X
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1516890908l/36204378.jpg
 released: 2018

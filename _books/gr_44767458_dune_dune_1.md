@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Dune (Dune, #1)'
-author: 'Frank Herbert'
+title: "Dune (Dune, #1)"
+author: "Frank Herbert"
 isbn: 059309932X
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1555447414l/44767458.jpg
 released: 1965

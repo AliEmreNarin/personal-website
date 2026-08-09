@@ -1,7 +1,7 @@
 ---
 layout: book-review
-title: 'Eşekli Kütüphaneci'
-author: 'Fakir Baykurt'
+title: "Eşekli Kütüphaneci"
+author: "Fakir Baykurt"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1448611357l/3921870.jpg
 released: 2000
 date: 2025-01-19
