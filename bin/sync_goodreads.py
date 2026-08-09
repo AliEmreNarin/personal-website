@@ -18,7 +18,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 
 GOODREADS_USER_ID = "165621971"
-SHELVES = ["books-2024", "books-2025", "books-2026"]
+SHELVES = ["books-2023", "books-2024", "books-2025", "books-2026"]
 BOOKS_DIR = os.path.join(os.path.dirname(__file__), "..", "_books")
 
 
