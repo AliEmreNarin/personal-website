@@ -10,5 +10,6 @@ started: 2026-01-06
 finished: 2026-01-06
 stars: 5
 status: Finished
+year: 2026
 goodreads_id: 13557108
 ---

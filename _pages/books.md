@@ -195,7 +195,7 @@ nav_order: 4
 </div>
 
 <div class="library-pane" id="pane-past">
-  {% assign by_year = past_books | group_by_exp: "b", "b.started | date: '%Y'" | sort: "name" | reverse %}
+  {% assign by_year = past_books | group_by: "year" | sort: "name" | reverse %}
   {% for group in by_year %}
   <h2 class="library-year">{{ group.name }}</h2>
   <div class="library-grid">

@@ -5,9 +5,10 @@ author: "Frank Herbert"
 isbn: 0593098234
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577043824l/44492285._SY475_.jpg
 released: 1969
-date: 2025-12-22
-started: 2025-12-22
+date: 2024-06-01
+started: 2024-06-01
 stars: 5
 status: Finished
+year: 2024
 goodreads_id: 44492285
 ---

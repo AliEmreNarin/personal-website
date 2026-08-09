@@ -8,5 +8,6 @@ started: 2025-01-12
 finished: 2025-01-12
 stars: 4
 status: Finished
+year: 2025
 goodreads_id: 43202560
 ---

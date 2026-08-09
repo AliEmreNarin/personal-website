@@ -101,8 +101,17 @@ def book_to_markdown(book):
     goodreads_id = book.get("book_id", "")
     year = book.get("year", "")
 
-    # Date used for Jekyll sorting (started = date added or read date)
-    sort_date = read_at or date_added or (f"{year}-06-01" if year else "")
+    # Date used for Jekyll sorting. Prefer the shelf year (books-20XX) over
+    # read_at/date_added, which reflect Goodreads bookkeeping, not reading time.
+    if read_at and (not year or read_at.startswith(year)):
+        sort_date = read_at
+    elif year:
+        sort_date = f"{year}-06-01"
+    else:
+        sort_date = read_at or date_added
+
+    if not year and sort_date:
+        year = sort_date[:4]
 
     lines = ["---"]
     lines.append("layout: book-review")
@@ -122,6 +131,8 @@ def book_to_markdown(book):
     if rating and rating != "0":
         lines.append(f"stars: {rating}")
     lines.append(f"status: {status}")
+    if year:
+        lines.append(f"year: {year}")
     if goodreads_id:
         lines.append(f"goodreads_id: {goodreads_id}")
     lines.append("---")
