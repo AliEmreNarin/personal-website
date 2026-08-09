@@ -4,7 +4,7 @@ title: personal
 permalink: /personal/
 description: A little about who I am outside of work.
 nav: true
-nav_order: 6
+nav_order: 5
 ---
 
 ## Outside of Work
