@@ -168,6 +168,8 @@ nav_order: 4
           <img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
         {% elsif book.isbn %}
           <img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.cover_goodreads %}
+          <img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
         {% endif %}
         {% if book.status %}
           <span class="book-status-badge badge-{{ status_lower }}">{{ book.status }}</span>
