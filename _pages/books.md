@@ -7,15 +7,6 @@ nav_order: 4
 ---
 
 <style>
-  .library-intro {
-    margin-bottom: 2rem;
-    max-width: 600px;
-  }
-  .library-intro p {
-    color: var(--global-text-color-light, #6c757d);
-    line-height: 1.7;
-  }
-
   /* past / present switch */
   .library-switch {
     display: flex;
@@ -69,13 +60,6 @@ nav_order: 4
     padding: 1rem 0 2rem;
   }
   .book-card { display: flex; flex-direction: column; }
-  .book-card a {
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
   .book-cover-wrap {
     position: relative;
     width: 100%;
@@ -84,11 +68,6 @@ nav_order: 4
     border-radius: 4px;
     background: var(--global-divider-color, #dee2e6);
     box-shadow: 2px 3px 10px rgba(0,0,0,0.12);
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-  .book-card:hover .book-cover-wrap {
-    box-shadow: 4px 6px 18px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
   }
   .book-cover-wrap img {
     position: absolute;
@@ -109,8 +88,6 @@ nav_order: 4
     border-radius: 3px;
     color: #fff;
   }
-  .badge-reading   { background: rgba(30,80,180,0.85); }
-  .badge-queued    { background: rgba(100,100,100,0.75); }
   .badge-abandoned { background: rgba(160,30,30,0.8); }
   .book-info { margin-top: 0.6rem; flex: 1; }
   .book-title {
@@ -129,10 +106,6 @@ nav_order: 4
   .book-stars .empty { color: var(--global-divider-color, #dee2e6); }
 </style>
 
-<div class="library-intro">
-  <p>Books I've read, am reading, or plan to read. Synced daily from <a href="https://www.goodreads.com/user/show/165621971-ali-narin" target="_blank">Goodreads</a>.</p>
-</div>
-
 <div class="library-switch">
   <button class="switch-btn active" data-pane="present">present</button>
   <button class="switch-btn" data-pane="past">past</button>
@@ -148,19 +121,17 @@ nav_order: 4
   <div class="library-grid">
     {% for book in reading_books %}
     <div class="book-card">
-      <a href="{{ book.url | relative_url }}">
-        <div class="book-cover-wrap">
-          {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
-          {% endif %}
-        </div>
-        <div class="book-info">
-          <div class="book-title">{{ book.title }}</div>
-          <div class="book-author">{{ book.author }}</div>
-        </div>
-      </a>
+      <div class="book-cover-wrap">
+        {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="book-info">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+      </div>
     </div>
     {% endfor %}
   </div>
@@ -173,19 +144,17 @@ nav_order: 4
   <div class="library-grid">
     {% for book in queued_books %}
     <div class="book-card">
-      <a href="{{ book.url | relative_url }}">
-        <div class="book-cover-wrap">
-          {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
-          {% endif %}
-        </div>
-        <div class="book-info">
-          <div class="book-title">{{ book.title }}</div>
-          <div class="book-author">{{ book.author }}</div>
-        </div>
-      </a>
+      <div class="book-cover-wrap">
+        {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
+        {% endif %}
+      </div>
+      <div class="book-info">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+      </div>
     </div>
     {% endfor %}
   </div>
@@ -201,26 +170,24 @@ nav_order: 4
   <div class="library-grid">
     {% for book in group.items %}
     <div class="book-card">
-      <a href="{{ book.url | relative_url }}">
-        <div class="book-cover-wrap">
-          {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
-          {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
-          {% endif %}
-          {% if book.status == "Abandoned" %}<span class="book-status-badge badge-abandoned">Abandoned</span>{% endif %}
-        </div>
-        <div class="book-info">
-          <div class="book-title">{{ book.title }}</div>
-          <div class="book-author">{{ book.author }}</div>
-          {% if book.stars %}
-            {% assign s = book.stars %}
-            <div class="book-stars">
-              {% if s >= 1 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 2 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 3 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 4 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 5 %}★{% else %}<span class="empty">★</span>{% endif %}
-            </div>
-          {% endif %}
-        </div>
-      </a>
+      <div class="book-cover-wrap">
+        {% if book.cover %}<img src="{{ book.cover | relative_url }}" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ book.olid }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ book.isbn }}-M.jpg" alt="{{ book.title }}" loading="lazy">
+        {% elsif book.cover_goodreads %}<img src="{{ book.cover_goodreads }}" alt="{{ book.title }}" loading="lazy">
+        {% endif %}
+        {% if book.status == "Abandoned" %}<span class="book-status-badge badge-abandoned">Abandoned</span>{% endif %}
+      </div>
+      <div class="book-info">
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-author">{{ book.author }}</div>
+        {% if book.stars %}
+          {% assign s = book.stars %}
+          <div class="book-stars">
+            {% if s >= 1 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 2 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 3 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 4 %}★{% else %}<span class="empty">★</span>{% endif %}{% if s >= 5 %}★{% else %}<span class="empty">★</span>{% endif %}
+          </div>
+        {% endif %}
+      </div>
     </div>
     {% endfor %}
   </div>

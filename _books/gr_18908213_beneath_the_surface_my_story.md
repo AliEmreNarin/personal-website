@@ -2,7 +2,6 @@
 layout: book-review
 title: "Beneath the Surface: My Story"
 author: "Michael Phelps"
-isbn: 1613213247
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385224909l/18908213.jpg
 released: 2005
 date: 2026-08-09

@@ -2,7 +2,6 @@
 layout: book-review
 title: "Babalar ve Oğullar"
 author: "Ivan Turgenev"
-isbn: 9757069442
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1595600003l/21569718.jpg
 released: 1862
 date: 2025-07-01
