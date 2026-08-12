@@ -118,7 +118,8 @@ def book_to_markdown(book):
     lines.append(f"title: {yaml_str(title)}")
     lines.append(f"author: {yaml_str(author)}")
     if isbn:
-        lines.append(f"isbn: {isbn}")
+        # Quote so YAML never parses leading-zero ISBNs as octal integers
+        lines.append(f'isbn: "{isbn}"')
     if cover_url:
         lines.append(f"cover_goodreads: {cover_url}")
     if published:

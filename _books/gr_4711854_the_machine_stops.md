@@ -2,7 +2,7 @@
 layout: book-review
 title: "The Machine Stops"
 author: "E.M. Forster"
-isbn: 140990329X
+isbn: "140990329X"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1347943820l/4711854.jpg
 released: 1909
 date: 2025-12-23
