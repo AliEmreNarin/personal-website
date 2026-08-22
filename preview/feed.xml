@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://alinarin.site/preview/feed.xml" rel="self" type="application/atom+xml" /><link href="https://alinarin.site/preview/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-08-22T03:16:11+00:00</updated><id>https://alinarin.site/preview/feed.xml</id><title type="html">Ali Emre Narin</title><subtitle>Personal website of Ali Emre Narin — research, writing, and reading.</subtitle><author><name>Ali Emre Narin</name><email>aliemre2024@gmail.com</email></author><entry><title type="html">Placeholder: a technical post</title><link href="https://alinarin.site/preview/blog/2025/placeholder-technical-post/" rel="alternate" type="text/html" title="Placeholder: a technical post" /><published>2025-01-25T10:00:00+00:00</published><updated>2025-01-25T10:00:00+00:00</updated><id>https://alinarin.site/preview/blog/2025/placeholder-technical-post</id><content type="html" xml:base="https://alinarin.site/preview/blog/2025/placeholder-technical-post/"><![CDATA[<p>This is a placeholder for a technical blog post. Replace the title, date, description, and content with your own.</p>
+
+<p>Technical posts might cover:</p>
+
+<ul>
+  <li>A research problem you’re working through</li>
+  <li>An explanation of a method or tool</li>
+  <li>Notes from a paper you found interesting</li>
+  <li>A tutorial or walkthrough for something you built</li>
+</ul>
+
+<p>Good technical writing explains not just <em>what</em> but <em>why</em> — the intuition behind a method, the tradeoffs of a design choice, the thing you wish someone had told you before you spent three days figuring it out.</p>
+
+<p>Here’s what code looks like on this site:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">running_mean</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="sh">"""</span><span class="s">Simple moving average — placeholder to show code styling.</span><span class="sh">"""</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="nf">len</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">-</span> <span class="n">window</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">out</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span> <span class="p">:</span> <span class="n">i</span> <span class="o">+</span> <span class="n">window</span><span class="p">])</span> <span class="o">/</span> <span class="n">window</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>And a pull quote, because every theme needs one to prove the blockquote style works.</p>
+</blockquote>
+
+<p>Delete this post when you have a real one ready.</p>]]></content><author><name>Ali Emre Narin</name><email>aliemre2024@gmail.com</email></author><category term="technical" /><summary type="html"><![CDATA[Replace this with your first real technical post.]]></summary></entry><entry><title type="html">Welcome to my blog</title><link href="https://alinarin.site/preview/blog/2025/welcome-to-my-blog/" rel="alternate" type="text/html" title="Welcome to my blog" /><published>2025-01-20T10:00:00+00:00</published><updated>2025-01-20T10:00:00+00:00</updated><id>https://alinarin.site/preview/blog/2025/welcome-to-my-blog</id><content type="html" xml:base="https://alinarin.site/preview/blog/2025/welcome-to-my-blog/"><![CDATA[<p>Writing is a way of thinking out loud. I’ve kept notes and half-formed ideas scattered across notebooks and text files for years, but I’ve never had a single place to put them where they might be useful to someone else.</p>
+
+<p>That changes here. This blog has two tracks:</p>
+
+<p><strong>Technical</strong> posts will cover things like research ideas, software, tools, and methods. I’ll try to write about things I’m actually working on rather than abstract surveys.</p>
+
+<p><strong>Non-technical</strong> posts will be everything else — books, ideas, observations, things I find interesting and can’t stop thinking about.</p>
+
+<p>I’m not aiming for a consistent schedule or a particular audience. I’m writing to clarify my own thinking, and if something is useful to you, that’s a bonus.</p>
+
+<p>Let’s see where this goes.</p>]]></content><author><name>Ali Emre Narin</name><email>aliemre2024@gmail.com</email></author><category term="non-technical" /><summary type="html"><![CDATA[A short note on why I'm starting to write.]]></summary></entry></feed>
