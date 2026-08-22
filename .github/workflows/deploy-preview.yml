@@ -1,0 +1,35 @@
+name: Deploy preview
+
+# Every push to `dev` publishes an unlisted build at https://alinarin.site/preview/
+# (noindex, not linked from anywhere). Merge dev → main to ship it for real.
+
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gh-pages
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+      - name: Build with preview overrides
+        run: JEKYLL_ENV=production bundle exec jekyll build --config _config.yml,_config_preview.yml
+      - name: Deploy to gh-pages/preview
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: _site
+          branch: gh-pages
+          target-folder: preview
+          clean: true

@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Utopia"
 author: "Thomas More"
 isbn: "0140449108"

@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Metamorphosis of Prime Intellect"
 author: "Roger    Williams"
 isbn: "1411602196"

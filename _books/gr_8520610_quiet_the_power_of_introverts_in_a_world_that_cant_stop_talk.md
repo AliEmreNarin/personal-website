@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Quiet: The Power of Introverts in a World That Can't Stop Talking"
 author: "Susan Cain"
 isbn: "0307352145"

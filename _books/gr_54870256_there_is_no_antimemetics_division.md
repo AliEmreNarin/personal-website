@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "There Is No Antimemetics Division"
 author: "qntm"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597056415l/54870256._SY475_.jpg

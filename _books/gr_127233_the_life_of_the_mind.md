@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Life of the Mind"
 author: "Hannah Arendt"
 isbn: "0156519925"

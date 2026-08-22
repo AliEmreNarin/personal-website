@@ -1,0 +1,9 @@
+{% assign s = site.data.socials %}
+<ul class="socials">
+  {% if s.email and s.email != "" %}<li><a href="mailto:{{ s.email }}">email</a></li>{% endif %}
+  {% if s.linkedin and s.linkedin != "" %}<li><a href="{{ s.linkedin }}" rel="me noopener" target="_blank">linkedin</a></li>{% endif %}
+  {% if s.x and s.x != "" %}<li><a href="{{ s.x }}" rel="me noopener" target="_blank">x</a></li>{% endif %}
+  {% if s.scholar and s.scholar != "" %}<li><a href="{{ s.scholar }}" rel="me noopener" target="_blank">google scholar</a></li>{% endif %}
+  {% if s.github and s.github != "" %}<li><a href="{{ s.github }}" rel="me noopener" target="_blank">github</a></li>{% endif %}
+  <li><a href="{{ '/cv/' | relative_url }}">cv</a></li>
+</ul>

@@ -114,7 +114,6 @@ def book_to_markdown(book):
         year = sort_date[:4]
 
     lines = ["---"]
-    lines.append("layout: book-review")
     lines.append(f"title: {yaml_str(title)}")
     lines.append(f"author: {yaml_str(author)}")
     if isbn:

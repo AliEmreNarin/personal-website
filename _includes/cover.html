@@ -1,0 +1,15 @@
+{% comment %}
+  Renders one book cover. Usage: {% include cover.html book=book %}
+  Priority: local cover → Goodreads image (skipping their generic "nophoto" placeholder) → OpenLibrary by ISBN/OLID → title text.
+{% endcomment %}
+{% assign b = include.book %}
+{% assign gr = b.cover_goodreads %}
+{% if gr contains "nophoto" %}{% assign gr = nil %}{% endif %}
+<span class="cover">
+  {% if b.cover %}<img src="{{ b.cover | relative_url }}" alt="{{ b.title | escape }}" loading="lazy">
+  {% elsif gr %}<img src="{{ gr }}" alt="{{ b.title | escape }}" loading="lazy" referrerpolicy="no-referrer">
+  {% elsif b.isbn %}<img src="https://covers.openlibrary.org/b/isbn/{{ b.isbn }}-M.jpg" alt="{{ b.title | escape }}" loading="lazy">
+  {% elsif b.olid %}<img src="https://covers.openlibrary.org/b/olid/{{ b.olid }}-M.jpg" alt="{{ b.title | escape }}" loading="lazy">
+  {% else %}<span class="cover-empty">{{ b.title | truncate: 48 }}</span>{% endif %}
+  {% if b.status == "Abandoned" %}<span class="cover-flag">dnf</span>{% endif %}
+</span>

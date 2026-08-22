@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "İçimizdeki Şeytan"
 author: "Sabahattin Ali"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1418561596l/7093555.jpg

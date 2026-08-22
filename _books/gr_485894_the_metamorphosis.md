@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Metamorphosis"
 author: "Franz Kafka"
 isbn: "0553213695"

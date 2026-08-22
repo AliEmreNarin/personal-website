@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Why Nations Fail: The Origins of Power, Prosperity, and Poverty"
 author: "Daron Acemoğlu"
 isbn: "0307719219"

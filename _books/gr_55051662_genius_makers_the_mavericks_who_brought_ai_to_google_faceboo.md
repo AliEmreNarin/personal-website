@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Genius Makers: The Mavericks Who Brought AI to Google, Facebook, and the World"
 author: "Cade Metz"
 isbn: "1524742678"

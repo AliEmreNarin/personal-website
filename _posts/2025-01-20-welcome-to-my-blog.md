@@ -1,11 +1,10 @@
 ---
-layout: post
-title: Welcome to My Blog
+title: Welcome to my blog
 date: 2025-01-20 10:00:00
-description: A short note on why I'm starting to write.
-tags: [writing]
 categories: non-technical
-featured: false
+emoji: 👋
+featured: true
+description: A short note on why I'm starting to write.
 ---
 
 Writing is a way of thinking out loud. I've kept notes and half-formed ideas scattered across notebooks and text files for years, but I've never had a single place to put them where they might be useful to someone else.

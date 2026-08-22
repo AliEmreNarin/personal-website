@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Zero to One: Notes on Startups, or How to Build the Future"
 author: "Peter Thiel"
 isbn: "0804139296"

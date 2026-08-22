@@ -1,7 +1,5 @@
----
-permalink: /robots.txt
----
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /preview/
 
-Sitemap: {{ site.baseurl | prepend: site.url }}/sitemap.xml
+Sitemap: https://alinarin.site/sitemap.xml

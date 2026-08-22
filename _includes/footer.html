@@ -1,0 +1,14 @@
+{% assign s = site.data.socials %}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© {{ site.time | date: "%Y" }} {{ site.title }}</span>
+    <span class="footer-links">
+      {% if s.email and s.email != "" %}<a href="mailto:{{ s.email }}">email</a>{% endif %}
+      {% if s.linkedin and s.linkedin != "" %}<a href="{{ s.linkedin }}" rel="me noopener" target="_blank">linkedin</a>{% endif %}
+      {% if s.x and s.x != "" %}<a href="{{ s.x }}" rel="me noopener" target="_blank">x</a>{% endif %}
+      {% if s.scholar and s.scholar != "" %}<a href="{{ s.scholar }}" rel="me noopener" target="_blank">scholar</a>{% endif %}
+      {% if s.github and s.github != "" %}<a href="{{ s.github }}" rel="me noopener" target="_blank">github</a>{% endif %}
+      <a href="{{ '/feed.xml' | relative_url }}">rss</a>
+    </span>
+  </div>
+</footer>

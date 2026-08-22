@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Consciousness: Confessions of a Romantic Reductionist"
 author: "Christof Koch"
 isbn: "0262017490"

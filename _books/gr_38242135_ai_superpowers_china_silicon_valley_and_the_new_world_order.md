@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "AI Superpowers: China, Silicon Valley, and the New World Order"
 author: "Kai-Fu Lee"
 isbn: "132854639X"

@@ -1,12 +1,18 @@
 ---
-layout: cv
-permalink: /cv/
+layout: page
 title: CV
-nav: true
-nav_order: 6
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
-cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
+permalink: /cv/
+cv_pdf: /assets/pdf/cv.pdf
+updated: August 2026
+description: A one-page summary of what I've done so far, as a PDF.
 ---
+
+<div class="btn-row">
+  <a class="btn btn-primary" href="{{ page.cv_pdf | relative_url }}" download="Ali_Emre_Narin_CV.pdf">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+    Download CV (PDF)
+  </a>
+  <a class="btn" href="{{ page.cv_pdf | relative_url }}" target="_blank" rel="noopener">View in browser</a>
+</div>
+
+<p class="small muted">Last updated {{ page.updated }}.</p>

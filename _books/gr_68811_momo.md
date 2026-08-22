@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Momo"
 author: "Michael Ende"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1420905611l/68811.jpg

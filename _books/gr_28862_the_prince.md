@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Prince"
 author: "Niccolò Machiavelli"
 isbn: "0937832383"

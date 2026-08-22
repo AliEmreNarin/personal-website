@@ -1,0 +1,40 @@
+---
+---
+<div class="pub" id="{{ entry.key }}">
+  <div class="pub-title">
+    {% if entry.html %}<a href="{{ entry.html }}">{{ entry.title }}</a>
+    {% elsif entry.pdf %}<a href="{{ entry.pdf }}">{{ entry.title }}</a>
+    {% else %}{{ entry.title }}{% endif %}
+  </div>
+  <div class="pub-authors">
+    {% if entry.author_array %}
+      {% for author in entry.author_array %}
+        {% assign me = false %}
+        {% if site.scholar.last_name contains author.last %}{% if site.scholar.first_name contains author.first %}{% assign me = true %}{% endif %}{% endif %}
+        {% if me %}<span class="me">{{ author.first }} {{ author.last }}</span>{% else %}{{ author.first }} {{ author.last }}{% endif %}{% unless forloop.last %}, {% endunless %}
+      {% endfor %}
+    {% else %}
+      {{ entry.author | replace: " and ", ", " }}
+    {% endif %}
+  </div>
+  <div class="pub-venue">
+    {%- if entry.type == "article" %}{{ entry.journal }}
+    {%- elsif entry.type == "inproceedings" %}{{ entry.booktitle }}
+    {%- elsif entry.type == "phdthesis" or entry.type == "mastersthesis" %}{{ entry.school }}
+    {%- elsif entry.type == "book" %}{{ entry.publisher }}
+    {%- elsif entry.type == "techreport" %}{{ entry.institution }}
+    {%- else %}{{ entry.journal | default: entry.booktitle | default: entry.publisher }}{% endif -%}
+    {% if entry.year %}<span class="pub-year">{{ entry.year }}</span>{% endif %}
+  </div>
+  <div class="pub-links">
+    {% if entry.pdf %}<a class="chip" href="{{ entry.pdf }}">pdf</a>{% endif %}
+    {% if entry.arxiv %}<a class="chip" href="https://arxiv.org/abs/{{ entry.arxiv }}">arxiv</a>{% endif %}
+    {% if entry.html %}<a class="chip" href="{{ entry.html }}">html</a>{% endif %}
+    {% if entry.code %}<a class="chip" href="{{ entry.code }}">code</a>{% endif %}
+    {% if entry.slides %}<a class="chip" href="{{ entry.slides }}">slides</a>{% endif %}
+    <details class="bib-details">
+      <summary class="chip">bib</summary>
+      <pre>{{ entry.bibtex }}</pre>
+    </details>
+  </div>
+</div>

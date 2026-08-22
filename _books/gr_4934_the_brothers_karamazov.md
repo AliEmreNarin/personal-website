@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Brothers Karamazov"
 author: "Fyodor Dostoevsky"
 isbn: "0374528373"

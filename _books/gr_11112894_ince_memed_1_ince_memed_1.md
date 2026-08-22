@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "İnce Memed 1 (İnce Memed, #1)"
 author: "Yaşar Kemal"
 isbn: "9750807146"

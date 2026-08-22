@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Dune (Dune, #1)"
 author: "Frank Herbert"
 isbn: "059309932X"

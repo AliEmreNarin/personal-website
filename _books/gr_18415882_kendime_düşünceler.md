@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Kendime Düşünceler"
 author: "Marcus Aurelius"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586464618l/18415882.jpg

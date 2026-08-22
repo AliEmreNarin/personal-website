@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "İnsanın Anlam Arayışı"
 author: "Viktor E. Frankl"
 isbn: "6054054201"

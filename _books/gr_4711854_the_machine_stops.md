@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Machine Stops"
 author: "E.M. Forster"
 isbn: "140990329X"

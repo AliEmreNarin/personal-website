@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Nexus: A Brief History of Information Networks from the Stone Age to AI"
 author: "Yuval Noah Harari"
 isbn: "059373422X"

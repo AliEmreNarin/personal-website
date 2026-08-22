@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Hard Thing About Hard Things: Building a Business When There Are No Easy Answers―Straight Talk on the Challenges of Entrepreneurship"
 author: "Ben Horowitz"
 isbn: "0062273205"

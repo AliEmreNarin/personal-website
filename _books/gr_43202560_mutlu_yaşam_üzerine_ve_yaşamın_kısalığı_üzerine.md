@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Mutlu Yaşam Üzerine ve Yaşamın Kısalığı Üzerine"
 author: "Seneca"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1544599601l/43202560._SY475_.jpg

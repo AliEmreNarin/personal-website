@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Hastalık Hastası"
 author: "Molière"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1373647529l/18190404.jpg

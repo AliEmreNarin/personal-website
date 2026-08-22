@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <p class="crumb"><a href="{{ '/blog/' | relative_url }}">← blog</a></p>
+    <h1 class="post-title">{% if page.emoji %}<span class="emoji" aria-hidden="true">{{ page.emoji }}</span> {% endif %}{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+      {% assign words = content | strip_html | number_of_words %}
+      {% assign mins = words | divided_by: 200 | at_least: 1 %}
+      <span class="dot">·</span> {{ mins }} min read
+      {% assign cat = page.categories | first %}
+      {% if cat %}
+        {% assign cat_data = site.data.blog_categories | where: "slug", cat | first %}
+        <span class="dot">·</span> {{ cat_data.name | default: cat }}
+      {% endif %}
+    </p>
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

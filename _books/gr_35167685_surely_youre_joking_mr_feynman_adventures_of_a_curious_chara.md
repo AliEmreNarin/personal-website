@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: '"Surely You''re Joking, Mr. Feynman!": Adventures of a Curious Character'
 author: "Richard P. Feynman"
 isbn: "0393355624"

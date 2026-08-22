@@ -1,0 +1,53 @@
+---
+layout: default
+---
+<section class="hero">
+  <img class="avatar" src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="" width="72" height="72">
+  <div>
+    <h1 class="hero-name">{{ site.title }}</h1>
+    <p class="hero-tagline">{{ site.tagline }}</p>
+  </div>
+</section>
+
+<div class="prose">
+  {{ content }}
+</div>
+
+{% include socials.html %}
+
+{% assign recent = site.posts | slice: 0, 4 %}
+{% if recent.size > 0 %}
+<section class="home-section">
+  <div class="section-head">
+    <h2>Writing</h2>
+    <a class="more" href="{{ '/blog/' | relative_url }}">all posts →</a>
+  </div>
+  <ul class="post-list">
+    {% for post in recent %}
+    <li>
+      <span class="emoji" aria-hidden="true">{{ post.emoji | default: "✏️" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <span class="when">({{ post.date | date: "%b '%y" }})</span>
+      {% if post.featured %}<span class="star" title="A favorite">⭐</span>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% assign reading = site.books | where: "status", "Reading" %}
+{% if reading.size > 0 %}
+<section class="home-section">
+  <div class="section-head">
+    <h2>Reading</h2>
+    <a class="more" href="{{ '/library/' | relative_url }}">library →</a>
+  </div>
+  <ul class="cover-row">
+    {% for book in reading %}
+    <li title="{{ book.title }} — {{ book.author }}">
+      {% include cover.html book=book %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

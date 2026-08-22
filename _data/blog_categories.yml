@@ -1,0 +1,9 @@
+# Blog sections, in display order. A post joins a section via its front matter:
+#   categories: technical
+# Posts whose category isn't listed here land under "Other".
+- slug: technical
+  name: Technical
+  blurb: Research notes, tools, methods, and things I built.
+- slug: non-technical
+  name: Non-technical
+  blurb: Books, ideas, and everything else.

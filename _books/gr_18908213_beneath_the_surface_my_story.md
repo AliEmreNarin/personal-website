@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Beneath the Surface: My Story"
 author: "Michael Phelps"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385224909l/18908213.jpg

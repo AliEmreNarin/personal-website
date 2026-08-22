@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Merchants of Doubt: How a Handful of Scientists Obscured the Truth on Issues from Tobacco Smoke to Global Warming"
 author: "Naomi Oreskes"
 isbn: "1596916109"

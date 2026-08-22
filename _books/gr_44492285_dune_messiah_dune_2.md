@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Dune Messiah (Dune #2)"
 author: "Frank Herbert"
 isbn: "0593098234"

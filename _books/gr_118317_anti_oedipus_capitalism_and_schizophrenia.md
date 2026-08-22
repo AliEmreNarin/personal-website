@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Anti-Oedipus: Capitalism and Schizophrenia"
 author: "Gilles Deleuze"
 isbn: "0816612250"

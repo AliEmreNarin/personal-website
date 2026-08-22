@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Improbable"
 author: "Adam Fawer"
 isbn: "006073678X"

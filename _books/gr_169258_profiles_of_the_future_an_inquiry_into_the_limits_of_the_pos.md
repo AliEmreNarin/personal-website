@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Profiles of the Future: An Inquiry into the Limits of the Possible"
 author: "Arthur C. Clarke"
 isbn: "0575402776"

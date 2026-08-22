@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Sea Wolf"
 author: "Jack London"
 isbn: "1598184318"

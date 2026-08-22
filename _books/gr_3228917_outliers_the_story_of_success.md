@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Outliers: The Story of Success"
 author: "Malcolm Gladwell"
 isbn: "0316017922"

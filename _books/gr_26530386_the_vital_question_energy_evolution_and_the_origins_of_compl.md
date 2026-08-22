@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Vital Question: Energy, Evolution, and the Origins of Complex Life"
 author: "Nick Lane"
 isbn: "0393352978"

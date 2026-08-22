@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Precipice"
 author: "Toby  Ord"
 isbn: "1526600218"

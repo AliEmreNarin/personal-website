@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Educated"
 author: "Tara Westover"
 isbn: "0399590501"

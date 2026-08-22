@@ -1,0 +1,15 @@
+{% comment %}
+  Usage: {% include book-grid.html books=some_list stars=true %}
+{% endcomment %}
+<ul class="book-grid">
+  {% for book in include.books %}
+  <li class="book">
+    {% include cover.html book=book %}
+    <span class="book-title">{{ book.title }}</span>
+    <span class="book-author">{{ book.author }}</span>
+    {% if include.stars and book.stars %}
+    <span class="book-stars" aria-label="{{ book.stars }} out of 5 stars">{% for i in (1..5) %}<span class="{% if i <= book.stars %}on{% endif %}">★</span>{% endfor %}</span>
+    {% endif %}
+  </li>
+  {% endfor %}
+</ul>

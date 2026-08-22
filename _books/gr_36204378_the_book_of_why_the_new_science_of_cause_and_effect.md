@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "The Book of Why: The New Science of Cause and Effect"
 author: "Judea Pearl"
 isbn: "046509760X"

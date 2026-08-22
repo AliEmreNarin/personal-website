@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Bilim Tarihi Sohbetleri"
 author: "Fuat Sezgin"
 cover_goodreads: https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1418421224l/23785024.jpg

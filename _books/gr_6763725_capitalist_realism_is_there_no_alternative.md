@@ -1,5 +1,4 @@
 ---
-layout: book-review
 title: "Capitalist Realism: Is There No Alternative?"
 author: "Mark Fisher"
 isbn: "1846943175"
